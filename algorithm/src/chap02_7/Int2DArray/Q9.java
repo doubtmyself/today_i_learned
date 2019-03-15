@@ -34,7 +34,7 @@ public class Q9 {
 			System.out.println("월 : "); int month = in.nextInt();
 			System.out.println("일 : "); int day = in.nextInt();
 			
-			System.out.printf("그 해 %d 일쨰 입니다.", leftDayOfYear(year, month, day));
+			System.out.printf("그 해 %d 일째 입니다.", leftDayOfYear(year, month, day));
 			System.out.println("한번더 실행할까요(1:예)");
 			retry = in.nextInt();
 		}while(retry ==1);
