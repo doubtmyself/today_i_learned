@@ -2,8 +2,7 @@ package chap02_7.Int2DArray;
 
 import java.util.Scanner;
 /**
- * dayOfYear 메서드 변수 사용 불가 풀기
- * while(-- ++)!!!!!
+ * 
  * @author reg13
  *
  */
