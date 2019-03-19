@@ -3,17 +3,17 @@ package chap02_7.Int2DArray;
 import java.util.Scanner;
 
 public class DayOfYear {
-	static int[][] mdays = { { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 }, // Æò³â
-			{ 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 }, }; // À±³â
+	static int[][] mdays = { { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 }, // í‰ë…„
+			{ 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 }, }; // ìœ¤ë…„
 
 	static int isLeap(int year){
-		return (year %4 ==0 && year %100 !=0 ||year % 400 ==0)? 1:0; //³âµµ¸¦ Á¶°Ç¿¡ ¸ÂÃç 2°¡ÁöÀÇ Ãâ·ÂÇüÅÂ·Î ¹Ù²Ş !!
+		return (year %4 ==0 && year %100 !=0 ||year % 400 ==0)? 1:0; //ë…„ë„ë¥¼ ì¡°ê±´ì— ë§ì¶° 2ê°€ì§€ì˜ ì¶œë ¥í˜•íƒœë¡œ ë°”ê¿ˆ !!
 	}
 	static int dayOfYear(int y, int m, int d){
-		int days = d;//dºÎÅÍ ½ÃÀÛÇØ¾ß d+mdayÀÇ °ªÀÌ µÈ´Ù.
+		int days = d;//dë¶€í„° ì‹œì‘í•´ì•¼ d+mdayì˜ ê°’ì´ ëœë‹¤.
 		
 		for(int i =1; i<m ; i++)
-			days += mdays[isLeap(y)][i -1];//¤¤
+			days += mdays[isLeap(y)][i -1];//ã„´
 		return days;
 	}
 	
@@ -22,15 +22,15 @@ public class DayOfYear {
 		Scanner in = new Scanner(System.in);
 		int retry;
 		
-		System.out.println("±× ÇØ °æ°ú ÀÏ¼ö¸¦ ±¸ÇÕ´Ï´Ù.");
+		System.out.println("ê·¸ í•´ ê²½ê³¼ ì¼ìˆ˜ë¥¼ êµ¬í•©ë‹ˆë‹¤.");
 		
 		do{
-			System.out.println("³â : "); int year = in.nextInt();
-			System.out.println("¿ù : "); int month = in.nextInt();
-			System.out.println("ÀÏ : "); int day = in.nextInt();
+			System.out.println("ë…„ : "); int year = in.nextInt();
+			System.out.println("ì›” : "); int month = in.nextInt();
+			System.out.println("ì¼ : "); int day = in.nextInt();
 			
-			System.out.printf("±× ÇØ %d ÀÏ¤Š ÀÔ´Ï´Ù.", dayOfYear(year, month, day));
-			System.out.println("ÇÑ¹ø´õ ½ÇÇàÇÒ±î¿ä(1:¿¹)");
+			System.out.printf("ê·¸ í•´ %d ì¼ì…ë‹ˆë‹¤.", dayOfYear(year, month, day));
+			System.out.println("í•œë²ˆë” ì‹¤í–‰í• ê¹Œìš”(1:ì˜ˆ)");
 			retry = in.nextInt();
 		}while(retry ==1);
 		in.close();
