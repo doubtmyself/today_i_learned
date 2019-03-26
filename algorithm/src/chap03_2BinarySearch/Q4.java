@@ -15,18 +15,18 @@ class Q4 {
 			System.out.print("-");
 		System.out.println();
 
-		int pl = 0; // 검색범위 맨 앞의 index
-		int pr = range - 1; // 검색범위 맨 뒤의 index
+		int first = 0; // 검색범위 맨 앞의 index
+		int end = range - 1; // 검색범위 맨 뒤의 index
 
 		do {
-			int pc = (pl + pr) / 2; // 중앙요소의 index
+			int pc = (first + end) / 2; // 중앙요소의 index
 			System.out.print("   |");
-			if (pl != pc)
-				System.out.printf(String.format("%%%ds<-%%%ds+", (pl * 4) + 1, (pc - pl) * 4), "", "");
+			if (first != pc)
+				System.out.printf(String.format("%%%ds<-%%%ds+", (first * 4) + 1, (pc - first) * 4), "", "");//format 앞에있는 형식으로 출력 %%은 %로 바뀐다.
 			else
 				System.out.printf(String.format("%%%ds<-+", pc * 4 + 1), "");
-			if (pc != pr)
-				System.out.printf(String.format("%%%ds->\n", (pr - pc) * 4 - 2), "");
+			if (pc != end)
+				System.out.printf(String.format("%%%ds->\n", (end - pc) * 4 - 2), "");
 			else
 				System.out.println("->");
 			System.out.printf("%3d|", pc);
@@ -36,10 +36,10 @@ class Q4 {
 			if (array[pc] == key)
 				return pc; // 검색성공
 			else if (array[pc] < key)
-				pl = pc + 1; // 검색범위를 뒤쪽 절반으로 좁힘
+				first = pc + 1; // 검색범위를 뒤쪽 절반으로 좁힘
 			else
-				pr = pc - 1; // 검색범위를 앞쪽 절반으로 좁힘
-		} while (pl <= pr);
+				end = pc - 1; // 검색범위를 앞쪽 절반으로 좁힘
+		} while (first <= end);
 		return -1; // 검색실패
 	}
 
