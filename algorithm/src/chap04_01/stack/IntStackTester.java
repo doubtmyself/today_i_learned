@@ -5,7 +5,9 @@ import java.util.Scanner;
 public class IntStackTester {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
-		IntStack s = new IntStack(4);
+		System.out.println("저장될 데이터 양 선택");
+		int num = in.nextInt();
+		IntStack s = new IntStack(num);
 
 		while (true) {
 			System.out.println("현재 데이터 수: " + s.size() + " / " + s.capacity());

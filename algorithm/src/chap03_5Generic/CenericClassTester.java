@@ -1,16 +1,16 @@
 package chap03_5Generic;
 
 public class CenericClassTester {
-	static class GenericClass<T>{
-		private T xyz;
-		GenericClass(T t){
+	static class GenericClass<E>{
+		private E xyz;
+		GenericClass(E t){
 			this.xyz = t;
 		}
 		/**
 		 * 자료형이 t인 xyz변수 리턴
 		 * @return
 		 */
-		T getXyz(){
+		E getXyz(){
 			return xyz;
 		}
 	}

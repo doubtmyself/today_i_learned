@@ -1,11 +1,13 @@
 package chap04_01.stack;
 
 import java.util.Scanner;
-
+//IntStack 클래스의 모든 메소드  사용 프로그램 작성
 public class Q1 {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
-		IntStack s = new IntStack(4);
+		System.out.println("저장될 데이터 양 선택");
+		int num = in.nextInt();
+		IntStack s = new IntStack(num);
 
 		while (true) {
 			System.out.println("현재 데이터 수: " + s.size() + " / " + s.capacity());
@@ -49,6 +51,7 @@ public class Q1 {
 				s.dump();
 				break;
 			case 5:
+				System.out.println("찾는 값을 입력하세요");
 				int key = in.nextInt();
 				System.out.println((s.indexOf(key)<0) ? "찾으시는 값이 존재하지 않습니다." : key + "값은 " + s.indexOf(key) + "번쨰로 저장됬습니다.");
 				break;
